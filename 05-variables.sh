@@ -1,5 +1,5 @@
 #!/bin/bash
 echo "Please enter user name:"
-read USERNAME
+read -s USERNAME
 
 echo "username entered : $USERNAME"

@@ -1,9 +1,10 @@
 #!/bin/bash
-USEDID=$(id -u)
+USERDID=$(id -u)
 
-if [ $USEDID -ne 0 ]
+if [ $USERDID -ne 0 ]
    then 
    echo " you must have sudo privileges"
+   exit 1
 fi
 
 dnf list installed mysql

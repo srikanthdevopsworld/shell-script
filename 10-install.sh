@@ -16,5 +16,8 @@ if [ $? ne 0]
         exit 1
             else
         echo "Mysql installed successfully..."
-        fi    
+        fi   
+    else
+    echo "mysql installed already"
+fi     
    

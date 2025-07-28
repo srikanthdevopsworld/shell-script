@@ -1,8 +1,8 @@
 #!/bin/bash
 
-userid = $(id -u)
+USERID = $(id -u)
 
-if [ $userid -ne 0]
+if [ $USERID -ne 0]
  then
  echo "User must have sudo privileges"
 exit 1
@@ -23,7 +23,7 @@ dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
-    dnf install mysql
+    dnf install mysql -Y
     VALIDATE $? "Installin mysql"
 else
     echo "mysql is already installed"
@@ -33,7 +33,7 @@ dnf list installed git
 
 if [ $? -ne 0 ]
 then
-    dnf install git
+    dnf install git -Y
     VALIDATE $? "Installin git"
 else
     echo "git is already installed"

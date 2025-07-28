@@ -7,16 +7,16 @@ VALIDATE() {
 
             if [ $1 -ne 0 ]
             then    
-                echo "$2 .... $R FAILURE"
+                echo -e "$2 .... $R FAILURE"
                 exit 1
             else
-                echo "$2 .... $G SUCCESS"    
+                echo -e "$2 .... $G SUCCESS"    
             fi
             }
 
 if [ $USERID -ne 0 ]
  then
- echo "User must have sudo privileges"
+ echo -e "User must have sudo privileges"
     exit 1
 fi
 
@@ -28,7 +28,7 @@ then
     dnf install mysql -y
     VALIDATE $? "Installin mysql"
 else
-    echo "mysql is already $Y installed"
+    echo -e "mysql is already $Y installed"
 fi
 
 dnf list installed git
@@ -38,5 +38,5 @@ then
     dnf install git -y
     VALIDATE $? "Installin git"
 else
-    echo "git is already $Y installed"
+    echo -e "git is already $Y installed"
 fi

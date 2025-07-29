@@ -40,7 +40,7 @@ if [ ! -d $DESTINATION_DIR ]
         exit 1
 fi
 
-FILES_TO_DELETE=$( find $SOURCE_DIR -name "*.log" -mtime +$DAY )
+FILES_TO_DELETE=$( find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 if [ -n "$FILES_TO_DELETE" ]
 then

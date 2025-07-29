@@ -33,7 +33,8 @@ if [ ! -d "$SOURCE_DIR" ]
         echo -e "$R $SOURCE_DIR does not exist.. please check $N"
         exit 1
 fi
-if [ ! -d "$SOURCE_DIR" ]
+
+if [ ! -d "$DESTINATION_DIR" ]
     then
         echo -e "$R $DESTINATION_DIR does not exist.. please check $N"
         exit 1

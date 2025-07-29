@@ -12,28 +12,29 @@ DAYS=${3:-14} #Optional
 LOG_FOLDER="/home/ec2-user/app-log"
 LOG_FILE=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S )
-LOG_FILE_NAME="$$LOG_FOLDER/$LOG_FILE-$TIMESTAMP.log"
+LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIMESTAMP.log"
+
 USAGE(){
-    echo -e " $R Usage:: $N backup <source-dir> <destination-dir> <days> "
+    echo -e " $R Usage:: $N sh backup.sh <source-dir> <destination-dir> <days> "
     exit 1
 }
+
+mkdir -p /home/ec2-user/app-log
 
 if [ $# -lt 2 ]
  then 
   USAGE
 fi
 
-
-mkdir -p /home/ec2-user/app-log
 mkdir -p /home/ec2-user/archive-log
 
-if [ ! -d "$SOURCE_DIR" ]
+if [ ! -d $SOURCE_DIR ]
     then
         echo -e " $R $SOURCE_DIR does not exist.. please check $N "
         exit 1
 fi
 
-if [ ! -d "$DESTINATION_DIR" ]
+if [ ! -d $DESTINATION_DIR ]
     then
         echo -e " $R $DESTINATION_DIR does not exist.. please check $N "
         exit 1

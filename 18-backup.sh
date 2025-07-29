@@ -10,7 +10,7 @@ DESTINATION_DIR=$2
 DAYS={3-14} #Optional
 
 LOG_FOLDER="/home/ec2-user/app-logs"
-LOG_FILE=$(echo #0 | cut -d "." -f1 )
+LOG_FILE=$(echo #0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S )
 LOG_FILE_NAME=$($LOG_FOLDER/$LOG_FILE-$TIMESTAMP.log)
 USAGE()

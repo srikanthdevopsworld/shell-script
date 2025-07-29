@@ -46,7 +46,7 @@ then
     echo "files are $FILES_TO_DELETE"
     ZIP_FILE="$DESINATION_DIR/app-logs-$TIMESTAMP.zip"
     find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
-    if [ -f "$ZIP_FILE"]
+    if [ -f "$ZIP_FILE" ]
      then
      echo -e "successfully created zip files for older than $DAYS "
         while read -r filepath

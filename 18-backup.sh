@@ -23,8 +23,7 @@ if [ $# -lt 2 ]
   USAGE
 fi
 
-FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS )
-echo "Files to delete are: $FILES_TO_DELETE"
+
 mkdir -p /home/ec2-user/app-logs
 mkdir -p /home/ec2-user/archive-logs
 
@@ -40,6 +39,8 @@ if [ ! -d "$DESTINATION_DIR" ]
         exit 1
 fi
 
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
 
+echo "Files to delete are: $FILES_TO_DELETE"
 
 

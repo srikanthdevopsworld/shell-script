@@ -52,7 +52,8 @@ then
      echo -e "successfully created zip files for older than $DAYS "
         while read -r filepath
         do
-        echo "deleting file: $filepath"
+        echo "deleting file: $filepath" &>>$LOG_FILE_NAME
+        rm -rf $filepath
         done <<< $FILES_TO_DELETE
     else
         echo -e "$R ERROR: $N Failed to create ZIP files"

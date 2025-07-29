@@ -44,20 +44,20 @@ FILES_TO_DELETE=$( find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
 
 if [ -n "$FILES_TO_DELETE" ]
 then
-    echo "files are $FILES_TO_DELETE"
-    ZIP_FILE="$DESINATION_DIR/app-logs-$TIMESTAMP.zip"
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
-    # if [ -f "$ZIP_FILE" ]
-    #  then
-    #  echo -e "successfully created zip files for older than $DAYS "
-    #     while read -r filepath
-    #     do
-    #     echo "deleting file: $filepath"
-    #     done <<< $FILES_TO_DELETE
-    # else
-    #     echo -e "$R ERROR: $N Failed to create ZIP files"
-    #     exit 1
-    # fi
+        echo "files are $FILES_TO_DELETE"
+        ZIP_FILE="$DESINATION_DIR/app-logs-$TIMESTAMP.zip"
+        find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
+    if [ -f "$ZIP_FILE" ]
+     then
+     echo -e "successfully created zip files for older than $DAYS "
+        while read -r filepath
+        do
+        echo "deleting file: $filepath"
+        done <<< $FILES_TO_DELETE
+    else
+        echo -e "$R ERROR: $N Failed to create ZIP files"
+        exit 1
+    fi
 
 else
     echo "No files to delete older than $DAYS"

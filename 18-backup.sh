@@ -9,7 +9,7 @@ SOURCE_DIR=$1
 DESTINATION_DIR=$2
 DAYS=${3:-14} #Optional
 
-LOG_FOLDER="/home/ec2-user/app-logs"
+LOG_FOLDER="/home/ec2-user/app-log"
 LOG_FILE=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S )
 LOG_FILE_NAME="$$LOG_FOLDER/$LOG_FILE-$TIMESTAMP.log"
@@ -24,8 +24,8 @@ if [ $# -lt 2 ]
 fi
 
 
-mkdir -p /home/ec2-user/app-logs
-mkdir -p /home/ec2-user/archive-logs
+mkdir -p /home/ec2-user/app-log
+mkdir -p /home/ec2-user/archive-log
 
 if [ ! -d "$SOURCE_DIR" ]
     then

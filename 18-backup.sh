@@ -41,7 +41,7 @@ fi
 
 FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS )
 
-if [ -n $FILES_TO_DELETE]
+if [ -n $FILES_TO_DELETE ]
 then
     echo "files are $FILES_TO_DELETE"
     ZIP_FILE="$DESINATION_DIR/app-logs-$TIMESTAMP.zip"

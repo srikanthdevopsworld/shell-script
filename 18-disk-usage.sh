@@ -6,6 +6,6 @@ USAGE =$( df -hT | grep xfs)
 
 while read -r line
 do
-echo "disk usage is: $$line "
+echo "disk usage is: $line "
 
 done <<< $USAGE

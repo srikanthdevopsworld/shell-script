@@ -9,7 +9,7 @@ do
 
 
 USAGE=$(echo $line | awk -F " " '{print $6F}')
-PARTITION=$(echo $line | awk -F " " '{print $6F}')
+PARTITION=$(echo $line | awk -F " " '{print $NF}')
 
 echo $USAGE of the Partition is $PARTITION
 

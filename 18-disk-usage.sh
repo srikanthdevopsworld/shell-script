@@ -9,5 +9,8 @@ do
 
 
 USAGE=$(echo $line | awk -F " " '{print $6F}')
+PARTITION=$(echo $line | awk -F " " '{print $6F}')
+
+echo $USAGE of the Partition is $PARTITION
 
 done <<< $DISK_USAGE
